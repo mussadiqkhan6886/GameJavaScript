@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background-container-color: rgb(161, 161, 161);
+    --screen-color: black;
+    --font-color: rgb(230, 230, 230);
+    --background-color: blue;
+    --border-color: black;
+    --shadow-color: rgba(95, 95, 95, 0.233);
+    --background-monster: red;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+.container{
+    background-color: var(--background-container-color);
+    padding: 1rem;
+    margin: auto;
+    max-width: 490px;
+    min-height: 180px;
+}
+#xp, #health{
+    margin-right: 10px;
+}
+.controls, .header{
+    padding: 0.3rem;
+    border: 2px solid var(--border-color);
+    box-shadow: inset 1px 1px 5px var(--shadow-color);
+}
+.controls button{
+    margin: 0.2rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all .3s;
+}
+.controls button:hover{
+    background-color: var(--screen-color);
+    color: var(--font-color);
+}
+.text-container{
+    background-color: var(--screen-color);
+    color: var(--font-color);
+    padding: 0.5rem;
+    min-height: 100px;
+}
+.monster{
+    display: none;
+    background-color: var(--background-monster);
+}
+
+.stat{
+    padding: 0.6rem;
+    color: var(--font-color);
+    font-size: 1.1rem;
+    margin-right: 12px;
+}
+
