@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: rgb(49, 20, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    text-align: center;
+}
+h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+#canvas{
+    border: 10px solid darkslategray;
+    background-color: rgb(216, 216, 216);
+}
+#reset{
+    width: 130px;
+    height: 45px;
+    font-size: 18px;
+    cursor: pointer;
+}
