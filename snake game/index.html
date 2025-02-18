@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="playGame">
+        <h1>Click to Play Snake Game</h1>
+        <button id="play">Play🐍</button>
+    </div>
     <div class="container">
         <h1>Snake Game</h1>
         <canvas id="canvas" width="400px" height="400px"></canvas>
-        <div id="score">0</div>
+        <div class="score-container">
+            <div id="score">0</div>
+            <div id="highScore">HighScore: 0</div>
+        </div>
         <button id="reset">Reset Game</button>
     </div>
     <script src="app.js"></script>
