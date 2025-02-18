@@ -84,10 +84,11 @@ function moveSnake(){
         score += 1;
         scoreText.textContent = `Score: ${score}`;
         createFood();
+        highScoreFunc();
     }else{
         snake.pop();
     }
-    highScoreFunc(score);
+
 };
 function drawSnake(){
     ctx.fillStyle = snakeColor;
@@ -171,8 +172,9 @@ function resetGame(){
     score = 0;
     startGame();
 };
-function highScoreFunc(score){
+function highScoreFunc(){
     if(score > highScore){
+        highScore = score;
         highScoreText.innerHTML = `HighScore: ${highScore}`;
     }
 }
