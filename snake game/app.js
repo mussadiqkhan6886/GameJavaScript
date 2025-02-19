@@ -79,6 +79,8 @@ function moveSnake(){
     const head = { x: snake[0].x + xVelocity,
                    y: snake[0].y + yVelocity};
 
+    // will make head red
+
     snake.unshift(head);
     if(snake[0].x == foodX && snake[0].y == foodY){
         score += 1;
@@ -175,6 +177,7 @@ function resetGame(){
 function highScoreFunc(){
     if(score > highScore){
         highScore = score;
+        // will add localStorage
         highScoreText.innerHTML = `HighScore: ${highScore}`;
     }
 }
