@@ -1,0 +1,16 @@
+
+body{
+    display: flex;
+    justify-content: space-evenly;
+}
+.grid{
+    width: 606px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.square{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
