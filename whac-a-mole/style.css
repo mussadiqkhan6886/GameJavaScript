@@ -14,3 +14,8 @@ body{
     height: 200px;
     border: 1px solid black;
 }
+.mole{
+    background:url(mole.jpg);
+    background-position: center;
+    background-size: cover;
+}
