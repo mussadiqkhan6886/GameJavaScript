@@ -1,0 +1,9 @@
+#grid{
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#grid img{
+    cursor: pointer;
+}
