@@ -15,12 +15,30 @@
     background-color: navy;
 }
 
-.log-left,
+/* .log-left,
 .log-right{
     background-color: lightblue;
-}
+} */
 
-.car-left,
+/* .car-left,
 .car-right{
     background-color: lightslategray;
+} */
+.l1, .l2, .l3{
+    background-color: brown;
+}
+.l4,.l5{
+    background-color: lightblue;
+}
+.c1{
+    background-color: black;
+}
+.c2, .c3{
+    background-color: rgb(189, 199, 209);
+}
+.frog{
+    background-color: green;
+}
+.playAgain{
+    display: none;
 }
