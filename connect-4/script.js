@@ -2,7 +2,7 @@ const squares = document.querySelectorAll('.grid div');
 const displayCurrentPlayer = document.querySelector('#current-player');
 const displayResult = document.querySelector('#result');
 let currentPlayer = 1;
-
+let gameOver = false
 
 const winningArrays = [
     [0, 1, 2, 3],
@@ -74,12 +74,42 @@ const winningArrays = [
     [11, 18, 25, 32],
     [12, 19, 26, 33],
     [13, 20, 27, 34],
-  ]
+]
+
+function checkBoard(){
+    winningArrays.forEach(winningArray => {
+        const square1 = squares[winningArray[0]]
+        const square2 = squares[winningArray[1]]
+        const square3 = squares[winningArray[2]]
+        const square4 = squares[winningArray[3]]
+
+        if ( square1.classList.contains('player-one') && 
+            square2.classList.contains('player-one') && 
+            square3.classList.contains('player-one') && 
+            square4.classList.contains('player-one') 
+        ){
+            displayResult.innerHTML = 'Player one Win'
+            gameOver = true
+
+        }
+
+        if(square1.classList.contains('player-two') && 
+        square2.classList.contains('player-two') && 
+        square3.classList.contains('player-two') && 
+        square4.classList.contains('player-two') ){
+            displayResult.innerHTML = 'Player two Win'
+            gameOver = true
+        }
+    })
+}
 
 
 squares.forEach((square, index) => {
     square.addEventListener('click', () => {
-        if(squares[index + 7].classList.contains('taken')){
+        if(gameOver){
+            alert('restart game')
+        }
+        else if(squares[index + 7].classList.contains('taken') &&!square.classList.contains('taken')){
             if(currentPlayer == 1){
                 square.classList.add('taken');
                 square.classList.add('player-one');
@@ -92,5 +122,7 @@ squares.forEach((square, index) => {
                 displayCurrentPlayer.textContent = ' 1\'s turn';
             }
         }else alert("Can't go there")
+        checkBoard()
     })
 })
+
