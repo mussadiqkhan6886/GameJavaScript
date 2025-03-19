@@ -1,15 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+body{
+    background-color: rgb(250, 235, 186);
+}
+#score{
+    font-size: 2rem;
+}
+#play{
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: brown;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.4s;
+    outline: none;
+}
+#play:hover{
+    background-color: white;
+    color: brown;
+}
 .grid{
     width: 562px;
     height: 300px;
-    border: 1px solid black;
+    border: 3px solid brown;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .block,
 .user{
     position: absolute;
     width: 100px;
     height: 20px;
-    background-color: blue;
+    background-color: darkgoldenrod;
 }
 .user{
     background-color: purple;
