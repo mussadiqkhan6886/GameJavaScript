@@ -1,12 +1,13 @@
 .grid{
-    width: 180px;
-    height: 180px;
+    width: 320px;
+    height: 360px;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
 }
 .grid div{
-    width: 20px;
+    width: 35.5px;
+    height: 35px;
 }
 .ending-block{
     background-color: red;
@@ -15,15 +16,6 @@
     background-color: navy;
 }
 
-/* .log-left,
-.log-right{
-    background-color: lightblue;
-} */
-
-/* .car-left,
-.car-right{
-    background-color: lightslategray;
-} */
 .l1, .l2, .l3{
     background-color: brown;
 }
