@@ -1,9 +1,12 @@
 const grid = document.querySelector('.grid');
+const displayResult = document.querySelector('#result')
 let currentShooterIndex = 202;
 let width = 15
 let direction = 1
 let invaderId
 let goingRight = true
+let aliensRemoved = []
+let result = 0
 
 for(let i =0; i<225; i++){
     const square = document.createElement('div');
@@ -20,7 +23,9 @@ let alienInvaders = [
 
 function draw(){
     for(let i = 0; i < alienInvaders.length; i++){
-        squares[alienInvaders[i]].classList.add('invader');
+        if(!aliensRemoved.includes(i)){
+            squares[alienInvaders[i]].classList.add('invader');
+        }
     }
 
 }
@@ -75,6 +80,53 @@ function moveInvader(){
     }
 
     draw()
+
+    if(squares[currentShooterIndex].classList.contains('invader', 'shooter')){
+        displayResult.innerHTML = 'Game Over'
+        clearInterval(invaderId)
+    }
+
+    for(let i = 0; i < alienInvaders.length; i++){
+        if(alienInvaders[i] >= 210){  // If an alien reaches the last row
+            displayResult.innerHTML = 'Game Over!';
+            clearInterval(invaderId);
+            return; // Stop further execution
+        }
+    }
+    
+    if(aliensRemoved.length === alienInvaders.length){
+        displayResult.innerHTML = 'You Win'
+        clearInterval(invaderId)
+    }
 }
 
-invaderId = setInterval(moveInvader, 500)
+invaderId = setInterval(moveInvader, 100)
+
+function shoot(e){
+    let laserId 
+    let laserCurrentIndex = currentShooterIndex
+    function moveLaser(){
+        squares[laserCurrentIndex].classList.remove('laser')
+        laserCurrentIndex -= width
+        squares[laserCurrentIndex].classList.add('laser')
+
+        if(squares[laserCurrentIndex].classList.contains('invader')){
+            squares[laserCurrentIndex].classList.remove('laser')
+            squares[laserCurrentIndex].classList.remove('invader')
+            clearInterval(laserId)
+            const alienRemoved = alienInvaders.indexOf(laserCurrentIndex)
+            aliensRemoved.push(alienRemoved)
+            result++
+            displayResult.innerHTML = result
+        }
+    }
+
+    switch(e.key){
+        case 'ArrowUp':
+            laserId = setInterval(moveLaser, 100)
+            break
+    }
+    
+}
+
+document.addEventListener('keydown', shoot)
