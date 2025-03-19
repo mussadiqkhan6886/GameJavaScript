@@ -77,7 +77,11 @@ squares.forEach((square, index) => {
             }
             checkBoard();
         } else {
-            alert("Invalid move!");
+            displayResult.innerHTML = 'Invalid Move'
+            setTimeout(() => {
+                    displayResult.innerHTML = ''
+            }, 1000);
+            
         }
     });
 });

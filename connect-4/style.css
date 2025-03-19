@@ -1,19 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+}
 .grid{
-    width: 140px;
-    height: 120px;
-    border: 1px solid black;
+    width: 560px;
+    height: 480px;
+    border: 1px solid rgb(255, 255, 255);
     display: flex;
     flex-wrap: wrap;
+    margin-top: 30px;
 }
 .grid div{
-    width: 20px;
-    height: 20px;
+    width: 80px;
+    height: 80px;
 }
 .player-one{
     background-color: red;
-    border-radius: 10px;
+    border-radius: 50%;
 }
 .player-two{
     background-color: blue;
-    border-radius: 10px;
+    border-radius: 50%;
+}
+#result{
+    margin-top: 20px;
+    height: 40px;
+    animation: result 1s forwards infinite;   
+}
+@keyframes result {
+    0%, 100%{
+        font-size: 1.2rem;
+    }
+    50%{
+        font-size: 2rem;
+    }
 }
