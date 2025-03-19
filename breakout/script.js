@@ -1,5 +1,6 @@
 let grid = document.querySelector('.grid');
 let scoreDisplay = document.querySelector('#score');
+let buttonPlay = document.querySelector('#play')
 let blockWidth = 100;
 let blockHeight = 20;
 let fullWidth = 560;
@@ -9,6 +10,7 @@ let xDirection = -2;
 let yDirection = 2;
 let ballInterval;
 let score = 0;
+let flag = false;
 
 class Block {
     constructor(xAxis, yAxis){
@@ -100,7 +102,7 @@ function moveBall(){
     checkForCollision();
 }
  
-ballInterval = setInterval(moveBall, 20);
+
 
 function checkForCollision(){
     // Block collisions
@@ -143,6 +145,7 @@ function checkForCollision(){
         scoreDisplay.innerHTML = `Score: ${score}, Game Over You Lost`;
         clearInterval(ballInterval);
         document.removeEventListener('keydown', moveUser);
+        flag = true;
     }
 }
 function changeDirection(){
@@ -162,3 +165,10 @@ function changeDirection(){
         xDirection = 2;
     }
 }
+
+buttonPlay.addEventListener('click', () => {
+    ballInterval = setInterval(moveBall, 20);
+    if(flag){
+        location.reload();
+    }
+})
