@@ -2,20 +2,41 @@
 body{
     display: flex;
     justify-content: space-evenly;
+    background-color: rgb(255, 209, 171);
 }
 .grid{
     width: 606px;
     height: 600px;
     display: flex;
     flex-wrap: wrap;
+
 }
 .square{
     width: 200px;
     height: 200px;
     border: 1px solid black;
+    background-color: white;
 }
 .mole{
     background:url(mole.jpg);
     background-position: center;
     background-size: cover;
+    cursor: pointer;
+}
+button{
+    background-color: lightsalmon;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+button:hover{
+    filter: brightness(120%);
+}
+.header{
+
+    font-size: 2.4em;
+
+}
+.header h1{
+    text-align: center;
 }

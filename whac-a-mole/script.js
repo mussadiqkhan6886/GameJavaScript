@@ -4,7 +4,8 @@ const squares = document.querySelectorAll('.square');
 let result = 0;
 let hitPosition;
 let timerId = null;
-let currentTime = 60;
+let currentTime = 20;
+let currentTimerId
 
 function randomSquare(){
     squares.forEach(square => {
@@ -27,10 +28,12 @@ squares.forEach(square => {
 })
 
 function showMole(){
-    timerId = setInterval(randomSquare, 500);
+    timerId = setInterval(randomSquare, 600);
 }
 
-showMole();
+setTimeout(() => {
+    showMole();
+}, 2000);
 
 function countDown(){
     currentTime--;
@@ -46,12 +49,14 @@ function countDown(){
             showMole();
             result = 0;
             score.innerHTML = 0;
-            currentTime = 60;
-            time.innerHTML = 60;
-            currentTimerId = setInterval(countDown, 100);
+            currentTime = 20;
+            time.innerHTML = 20;
+            currentTimerId = setInterval(countDown, 1000);
             button.remove();
         })
     }
 }
 
-let currentTimerId = setInterval(countDown, 100)
+setTimeout(() => {
+     currentTimerId = setInterval(countDown, 1000)
+}, 2000)
