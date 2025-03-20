@@ -7,3 +7,20 @@
 #grid img{
     cursor: pointer;
 }
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+h3{
+    background-color: red;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 1.4em;
+}
+#wrong{
+    font-size: 1.5rem;
+}
