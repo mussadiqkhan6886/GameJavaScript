@@ -61,7 +61,7 @@ function endGame() {
 squares.forEach((square, index) => {
     square.addEventListener('click', () => {
         if (gameOver) {
-            alert('Game over! Refresh to restar.');
+            alert('Game over! Refresh to restart.');
             return;
         }
 
